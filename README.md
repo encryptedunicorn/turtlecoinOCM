@@ -14,10 +14,11 @@ The Turtlecoin One Click Miner is essentially a GUI for the cryptonight mining s
 * Specify usage of CPU/GPU
 * Some advanced settings
 
-## Planned features
+## Planned features/steps
 * Integrate pool statistics
 * Select multiple pools under additional consideration of e.g. pool hashrate
 * Implement/enable all available advanced options for xmr-stak
+* Clean up the code and use best practices
 * Support Linux :)
 
 ## Important
