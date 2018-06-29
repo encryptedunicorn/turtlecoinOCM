@@ -27,14 +27,14 @@ The Turtlecoin One Click Miner is a GUI for the cryptonight mining software `xmr
 Folder structure from where the OCM is placed:
 
 * miners
-** xmrig
-*** xmrig.exe
-** xmrigamd
-*** xmrig-amd.exe
-** xmrignvidia
-*** xmrig-nvidia.exe
-** xmr-stak
-*** xmr-stak.exe *(alongside all other necessary files)*
+  * xmrig
+    * xmrig.exe
+  * xmrigamd
+    * xmrig-amd.exe
+  * xmrignvidia
+    * xmrig-nvidia.exe
+  * xmr-stak
+    * xmr-stak.exe *(alongside all other necessary files)*
 
 
 ## Support this little project!
