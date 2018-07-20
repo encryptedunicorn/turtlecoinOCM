@@ -53,6 +53,7 @@
             this.selectedCb.Size = new System.Drawing.Size(15, 32);
             this.selectedCb.TabIndex = 0;
             this.selectedCb.UseVisualStyleBackColor = true;
+            this.selectedCb.CheckedChanged += new System.EventHandler(this.selectedCb_CheckedChanged);
             // 
             // label1
             // 

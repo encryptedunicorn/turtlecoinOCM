@@ -46,7 +46,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.nvidiaMiningCheck = new System.Windows.Forms.CheckBox();
             this.amdMiningCheck = new System.Windows.Forms.CheckBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.refreshTimeNum = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.hardwareCb = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -93,11 +93,15 @@
             this.poolStatsUpdateCb = new System.Windows.Forms.CheckBox();
             this.poolListPanel = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.refreshTimeNum)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gpuBsleepNum)).BeginInit();
@@ -216,6 +220,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.linkLabel5);
             this.panel2.Controls.Add(this.difficultyLbl);
             this.panel2.Controls.Add(this.connectedServerLbl);
             this.panel2.Controls.Add(this.bestShareLbl);
@@ -285,9 +290,10 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.Controls.Add(this.linkLabel7);
             this.panel3.Controls.Add(this.nvidiaMiningCheck);
             this.panel3.Controls.Add(this.amdMiningCheck);
-            this.panel3.Controls.Add(this.numericUpDown1);
+            this.panel3.Controls.Add(this.refreshTimeNum);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.hardwareCb);
             this.panel3.Controls.Add(this.label4);
@@ -314,6 +320,7 @@
             this.nvidiaMiningCheck.TabIndex = 9;
             this.nvidiaMiningCheck.Text = "NVIDIA";
             this.nvidiaMiningCheck.UseVisualStyleBackColor = true;
+            this.nvidiaMiningCheck.CheckedChanged += new System.EventHandler(this.nvidiaMiningCheck_CheckedChanged);
             // 
             // amdMiningCheck
             // 
@@ -324,29 +331,30 @@
             this.amdMiningCheck.TabIndex = 9;
             this.amdMiningCheck.Text = "AMD";
             this.amdMiningCheck.UseVisualStyleBackColor = true;
+            this.amdMiningCheck.CheckedChanged += new System.EventHandler(this.amdMiningCheck_CheckedChanged);
             // 
-            // numericUpDown1
+            // refreshTimeNum
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(443, 173);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.refreshTimeNum.Location = new System.Drawing.Point(443, 173);
+            this.refreshTimeNum.Maximum = new decimal(new int[] {
             60,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.refreshTimeNum.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(48, 27);
-            this.numericUpDown1.TabIndex = 7;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.refreshTimeNum.Name = "refreshTimeNum";
+            this.refreshTimeNum.Size = new System.Drawing.Size(48, 27);
+            this.refreshTimeNum.TabIndex = 7;
+            this.refreshTimeNum.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.refreshTimeNum.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // label3
             // 
@@ -369,6 +377,7 @@
             this.hardwareCb.Size = new System.Drawing.Size(102, 28);
             this.hardwareCb.TabIndex = 6;
             this.hardwareCb.Text = "Low end";
+            this.hardwareCb.SelectedIndexChanged += new System.EventHandler(this.hardwareCb_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -423,6 +432,7 @@
             this.gpuMiningCheck.TabIndex = 2;
             this.gpuMiningCheck.Text = "GPU";
             this.gpuMiningCheck.UseVisualStyleBackColor = true;
+            this.gpuMiningCheck.CheckedChanged += new System.EventHandler(this.gpuMiningCheck_CheckedChanged);
             // 
             // advancedCheck
             // 
@@ -448,6 +458,7 @@
             this.cpuMiningCheck.TabIndex = 2;
             this.cpuMiningCheck.Text = "CPU";
             this.cpuMiningCheck.UseVisualStyleBackColor = true;
+            this.cpuMiningCheck.CheckedChanged += new System.EventHandler(this.cpuMiningCheck_CheckedChanged);
             // 
             // label6
             // 
@@ -485,6 +496,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.Control;
+            this.panel5.Controls.Add(this.linkLabel4);
             this.panel5.Controls.Add(this.autoConfigCheck);
             this.panel5.Controls.Add(this.writeLogFileTb);
             this.panel5.Controls.Add(this.cpuLowPowerCheck);
@@ -708,6 +720,7 @@
             0,
             0,
             0});
+            this.cpuUsageNum.ValueChanged += new System.EventHandler(this.cpuUsageNum_ValueChanged);
             // 
             // cpuThreadNum
             // 
@@ -793,6 +806,7 @@
             this.showCLICheck.TabIndex = 10;
             this.showCLICheck.Text = "Show CLI(s)";
             this.showCLICheck.UseVisualStyleBackColor = true;
+            this.showCLICheck.CheckedChanged += new System.EventHandler(this.showCLICheck_CheckedChanged);
             // 
             // writeLogCheck
             // 
@@ -804,6 +818,7 @@
             this.writeLogCheck.TabIndex = 2;
             this.writeLogCheck.Text = "Write log(s)";
             this.writeLogCheck.UseVisualStyleBackColor = true;
+            this.writeLogCheck.CheckedChanged += new System.EventHandler(this.writeLogCheck_CheckedChanged);
             // 
             // label7
             // 
@@ -848,6 +863,7 @@
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.linkLabel8);
             this.panel8.Controls.Add(this.linkLabel6);
             this.panel8.Controls.Add(this.label13);
             this.panel8.Controls.Add(this.addPoolAddress);
@@ -868,7 +884,7 @@
             // 
             this.linkLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Location = new System.Drawing.Point(434, 15);
+            this.linkLabel6.Location = new System.Drawing.Point(403, 15);
             this.linkLabel6.Name = "linkLabel6";
             this.linkLabel6.Size = new System.Drawing.Size(94, 20);
             this.linkLabel6.TabIndex = 9;
@@ -981,6 +997,52 @@
             this.label10.TabIndex = 2;
             this.label10.Text = "Pools";
             // 
+            // linkLabel4
+            // 
+            this.linkLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.Location = new System.Drawing.Point(410, 16);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(118, 20);
+            this.linkLabel4.TabIndex = 13;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "Reset everything";
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
+            // 
+            // linkLabel5
+            // 
+            this.linkLabel5.AutoSize = true;
+            this.linkLabel5.Location = new System.Drawing.Point(515, 10);
+            this.linkLabel5.Name = "linkLabel5";
+            this.linkLabel5.Size = new System.Drawing.Size(16, 20);
+            this.linkLabel5.TabIndex = 4;
+            this.linkLabel5.TabStop = true;
+            this.linkLabel5.Text = "?";
+            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
+            // 
+            // linkLabel7
+            // 
+            this.linkLabel7.AutoSize = true;
+            this.linkLabel7.Location = new System.Drawing.Point(515, 10);
+            this.linkLabel7.Name = "linkLabel7";
+            this.linkLabel7.Size = new System.Drawing.Size(16, 20);
+            this.linkLabel7.TabIndex = 4;
+            this.linkLabel7.TabStop = true;
+            this.linkLabel7.Text = "?";
+            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
+            // 
+            // linkLabel8
+            // 
+            this.linkLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel8.AutoSize = true;
+            this.linkLabel8.Location = new System.Drawing.Point(508, 15);
+            this.linkLabel8.Name = "linkLabel8";
+            this.linkLabel8.Size = new System.Drawing.Size(16, 20);
+            this.linkLabel8.TabIndex = 4;
+            this.linkLabel8.TabStop = true;
+            this.linkLabel8.Text = "?";
+            this.linkLabel8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel8_LinkClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -995,6 +1057,7 @@
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "TurtleCoin OneClickMiner";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1003,7 +1066,7 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.refreshTimeNum)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -1066,7 +1129,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.CheckBox autoConfigCheck;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown refreshTimeNum;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
@@ -1089,6 +1152,10 @@
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.LinkLabel linkLabel4;
+        private System.Windows.Forms.LinkLabel linkLabel5;
+        private System.Windows.Forms.LinkLabel linkLabel7;
+        private System.Windows.Forms.LinkLabel linkLabel8;
     }
 }
 

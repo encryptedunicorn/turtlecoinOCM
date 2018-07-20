@@ -55,7 +55,7 @@ namespace trtlOCM
                 if (res.Status == IPStatus.Success)
                 {
                     ping = (int)((DateTime.Now.Ticks - pingStart) / 10000);
-                    pingLbl.Text = ping.ToString();
+                    pingLbl.Text = ping.ToString() + " ms";
                 }
                 else if (res.Status == IPStatus.TimedOut)
                 {
@@ -101,9 +101,9 @@ namespace trtlOCM
                     hashrate = int.Parse(getFromJSON(@"""hashrate""", e.Result));
                     fee = double.Parse(getFromJSON(@"""fee""", e.Result).Replace('.', ','));
 
-                    payoutLbl.Text = payout.ToString();
-                    hashLbl.Text = hashrate.ToString();
-                    feeLbl.Text = fee.ToString();
+                    payoutLbl.Text = payout.ToString() + " TRTL";
+                    hashLbl.Text = hashrate.ToString() + " H/s";
+                    feeLbl.Text = fee.ToString() + "%";
                 }
                 catch
                 {
@@ -212,6 +212,14 @@ namespace trtlOCM
         private void label13_Click(object sender, EventArgs e)
         {
             this.Parent.Controls.Remove(this);
+        }
+
+        private void selectedCb_CheckedChanged(object sender, EventArgs e)
+        {
+            if (selectedCb.Checked && !trtlOCM.Properties.Settings.Default.savedPools.Contains(miningAddress))
+                trtlOCM.Properties.Settings.Default.savedPools += miningAddress;
+            else if (!selectedCb.Checked)
+                trtlOCM.Properties.Settings.Default.savedPools = trtlOCM.Properties.Settings.Default.savedPools.Replace(miningAddress, "");
         }
     }
 }
