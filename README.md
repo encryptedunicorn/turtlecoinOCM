@@ -19,6 +19,9 @@ The Turtlecoin One Click Miner is a GUI for the cryptonight mining software `xmr
 * Clean up the code and use best practices
 * Support Linux :)
 
+## How to build
+Download the repository and extract it. Open the .sln file with a recent version of Visual Studio (Community Edition / make sure you have C# packages installed). Build the project the green run button or "Build Solution" in the Build menu. You'll find the binaries inside the folder in the directory `bin/debug/` or `bin/release/`. Copy `trtlOCM.exe` to your preferred directory and make sure to have the miner executables in the same folder as described below.
+
 ## Important
 * Mine at your own risk concerning your hardware
 * Refer to [xmr-stak](https://github.com/fireice-uk/xmr-stak) and [xmrig](https://github.com/xmrig)
