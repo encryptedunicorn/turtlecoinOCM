@@ -1,32 +1,47 @@
-# turtlecoinOCM
-One click miner GUI for xmr-stak to specifically mine the Turtlecoin
+# TurtleCoin OneClickMiner
+One click miner GUI for xmrig and xmr-stak to specifically mine TurtleCoin
 
-
-
-## What the program does
-The Turtlecoin One Click Miner is essentially a GUI for the cryptonight mining software `xmr-stak` by fireice-uk specifically designed to work with Turtlecoin (TRTL) pools. 
+## What this program does
+The Turtlecoin One Click Miner is a GUI for the cryptonight mining software `xmrig` by @psychocrypt `xmr-stak` by @fireice-uk specifically designed to work with TurtleCoin (TRTL) pools. 
 
 ## Features
 * Mine to your personal address!
-* Mine to the TurtleBotRain!
-* Autoselects pools according to their ping
+* Automatic selection of pools according to their ping, payout threshold and more parameters
+* Integrated pool statistics (partly implemented)
 * Show stats at specified refresh rate
 * Specify usage of CPU/GPU
 * Some advanced settings
 
 ## Planned features/steps
-* Integrate pool statistics
-* Select multiple pools under additional consideration of e.g. pool hashrate
+* ~~Integrate pool statistics~~ done
+* ~~Select multiple pools under additional consideration of e.g. pool hashrate~~ done
 * Implement/enable all available advanced options for xmr-stak
 * Clean up the code and use best practices
 * Support Linux :)
 
+## How to build
+Download the repository and extract it. Open the .sln file with a recent version of Visual Studio (Community Edition / make sure you have C# packages installed). Build the project using the green run button or "Build Solution" in the Build menu. You'll find the binaries inside the project folder in the directory `bin/debug/` or `bin/release/`. Copy `trtlOCM.exe` to your preferred directory and make sure to have the miner executables in the same folder as described below.
+
 ## Important
-* Install xmr-stak inside a proper `xmr-stak` folder into the directory of the One Click Miner
 * Mine at your own risk concerning your hardware
-* Refer to [xmr-stak](https://github.com/fireice-uk/xmr-stak)
+* Refer to [xmr-stak](https://github.com/fireice-uk/xmr-stak) and [xmrig](https://github.com/xmrig)
+* The program needs a specific folder structure to work. Upcoming releases wil have it bundled with the miners.
+
+Folder structure from where the OCM is placed:
+
+* miners
+  * xmrig
+    * xmrig.exe
+  * xmrigamd
+    * xmrig-amd.exe
+  * xmrignvidia
+    * xmrig-nvidia.exe
+  * xmr-stak
+    * xmr-stak.exe *(alongside all other necessary files)*
+
 
 ## Support this little project!
-You can help by optimizing the code and submit pull requests. Or use the miner poiting to the raindance to help the whole Turtle community.
+You can help by forking the project, optimizing the code and submitting pull requests. Test latest commits before I file releases!
 
-Thanks!
+Thanks,
+your EncryptedUnicorn!

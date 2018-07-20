@@ -1,4 +1,4 @@
-﻿namespace trtlOCMattempt
+﻿namespace trtlOCM
 {
     partial class Form1
     {
@@ -31,10 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.minerSelectionCb = new System.Windows.Forms.ComboBox();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.difficultyLbl = new System.Windows.Forms.Label();
             this.connectedServerLbl = new System.Windows.Forms.Label();
@@ -42,7 +44,9 @@
             this.shareCountLbl = new System.Windows.Forms.Label();
             this.hashrateLbl = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nvidiaMiningCheck = new System.Windows.Forms.CheckBox();
+            this.amdMiningCheck = new System.Windows.Forms.CheckBox();
+            this.refreshTimeNum = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.hardwareCb = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,37 +58,63 @@
             this.cpuMiningCheck = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.startBtn = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.autoConfigCheck = new System.Windows.Forms.CheckBox();
-            this.showCLICheck = new System.Windows.Forms.CheckBox();
             this.writeLogFileTb = new System.Windows.Forms.TextBox();
             this.cpuLowPowerCheck = new System.Windows.Forms.CheckBox();
             this.aesCb = new System.Windows.Forms.ComboBox();
             this.gpuBsleepNum = new System.Windows.Forms.NumericUpDown();
             this.gpuBfactNum = new System.Windows.Forms.NumericUpDown();
             this.gpuBlocksNum = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.gpuThreadsNum = new System.Windows.Forms.NumericUpDown();
+            this.cpuUsageNum = new System.Windows.Forms.NumericUpDown();
             this.cpuThreadNum = new System.Windows.Forms.NumericUpDown();
-            this.writeLogCheck = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.showCLICheck = new System.Windows.Forms.CheckBox();
+            this.writeLogCheck = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.addPoolAddress = new System.Windows.Forms.Label();
+            this.newPoolTb = new System.Windows.Forms.TextBox();
+            this.selectionModeCb = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.poolStatsUpdateCb = new System.Windows.Forms.CheckBox();
+            this.poolListPanel = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.refreshTimeNum)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gpuBsleepNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gpuBfactNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gpuBlocksNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gpuThreadsNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpuUsageNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cpuThreadNum)).BeginInit();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -93,33 +123,49 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 21.25F);
             this.label1.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label1.Location = new System.Drawing.Point(10, 10);
+            this.label1.Location = new System.Drawing.Point(70, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(311, 40);
+            this.label1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 0);
+            this.label1.Size = new System.Drawing.Size(346, 41);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Turtlecoin (TRTL) Miner";
+            this.label1.Text = "TurtleCoin OneClickMiner";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.minerSelectionCb);
             this.panel1.Controls.Add(this.linkLabel3);
             this.panel1.Controls.Add(this.linkLabel2);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(8);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(540, 100);
+            this.panel1.Padding = new System.Windows.Forms.Padding(10, 8, 10, 10);
+            this.panel1.Size = new System.Drawing.Size(544, 100);
             this.panel1.TabIndex = 1;
+            // 
+            // minerSelectionCb
+            // 
+            this.minerSelectionCb.FormattingEnabled = true;
+            this.minerSelectionCb.Items.AddRange(new object[] {
+            "XMRig",
+            "XMR-stak"});
+            this.minerSelectionCb.Location = new System.Drawing.Point(133, 57);
+            this.minerSelectionCb.Name = "minerSelectionCb";
+            this.minerSelectionCb.Size = new System.Drawing.Size(121, 28);
+            this.minerSelectionCb.TabIndex = 3;
+            this.minerSelectionCb.Text = "XMRig";
+            this.minerSelectionCb.SelectedIndexChanged += new System.EventHandler(this.minerSelectionCb_SelectedIndexChanged);
             // 
             // linkLabel3
             // 
             this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Location = new System.Drawing.Point(477, 70);
+            this.linkLabel3.Location = new System.Drawing.Point(484, 68);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(50, 20);
             this.linkLabel3.TabIndex = 2;
@@ -130,39 +176,51 @@
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(396, 40);
+            this.linkLabel2.Location = new System.Drawing.Point(472, 39);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(131, 20);
+            this.linkLabel2.Size = new System.Drawing.Size(62, 20);
             this.linkLabel2.TabIndex = 2;
             this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Settings explained";
+            this.linkLabel2.Text = "Settings";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(428, 10);
+            this.linkLabel1.Location = new System.Drawing.Point(466, 10);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(99, 20);
+            this.linkLabel1.Size = new System.Drawing.Size(68, 20);
             this.linkLabel1.TabIndex = 2;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Read this first";
+            this.linkLabel1.Text = "Read Me";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Location = new System.Drawing.Point(10, 50);
+            this.label2.Location = new System.Drawing.Point(70, 49);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(10);
-            this.label2.Size = new System.Drawing.Size(237, 40);
+            this.label2.Padding = new System.Windows.Forms.Padding(7, 10, 10, 10);
+            this.label2.Size = new System.Drawing.Size(67, 40);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Based on xmr-stak by fireice-uk";
+            this.label2.Text = "Miner:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::trtlOCM.Properties.Resources.turtlecoin_symbol_color;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 82);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.linkLabel5);
             this.panel2.Controls.Add(this.difficultyLbl);
             this.panel2.Controls.Add(this.connectedServerLbl);
             this.panel2.Controls.Add(this.bestShareLbl);
@@ -172,7 +230,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(540, 135);
+            this.panel2.Size = new System.Drawing.Size(544, 135);
             this.panel2.TabIndex = 2;
             // 
             // difficultyLbl
@@ -224,14 +282,18 @@
             this.hashrateLbl.Location = new System.Drawing.Point(10, 10);
             this.hashrateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.hashrateLbl.Name = "hashrateLbl";
-            this.hashrateLbl.Size = new System.Drawing.Size(236, 31);
+            this.hashrateLbl.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.hashrateLbl.Size = new System.Drawing.Size(243, 31);
             this.hashrateLbl.TabIndex = 0;
             this.hashrateLbl.Text = "Stats - Hashrate: - H/s";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
-            this.panel3.Controls.Add(this.numericUpDown1);
+            this.panel3.Controls.Add(this.linkLabel7);
+            this.panel3.Controls.Add(this.nvidiaMiningCheck);
+            this.panel3.Controls.Add(this.amdMiningCheck);
+            this.panel3.Controls.Add(this.refreshTimeNum);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.hardwareCb);
             this.panel3.Controls.Add(this.label4);
@@ -246,36 +308,58 @@
             this.panel3.Location = new System.Drawing.Point(0, 235);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10);
-            this.panel3.Size = new System.Drawing.Size(540, 218);
+            this.panel3.Size = new System.Drawing.Size(544, 218);
             this.panel3.TabIndex = 3;
             // 
-            // numericUpDown1
+            // nvidiaMiningCheck
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(446, 173);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.nvidiaMiningCheck.AutoSize = true;
+            this.nvidiaMiningCheck.Location = new System.Drawing.Point(213, 51);
+            this.nvidiaMiningCheck.Name = "nvidiaMiningCheck";
+            this.nvidiaMiningCheck.Size = new System.Drawing.Size(77, 24);
+            this.nvidiaMiningCheck.TabIndex = 9;
+            this.nvidiaMiningCheck.Text = "NVIDIA";
+            this.nvidiaMiningCheck.UseVisualStyleBackColor = true;
+            this.nvidiaMiningCheck.CheckedChanged += new System.EventHandler(this.nvidiaMiningCheck_CheckedChanged);
+            // 
+            // amdMiningCheck
+            // 
+            this.amdMiningCheck.AutoSize = true;
+            this.amdMiningCheck.Location = new System.Drawing.Point(145, 51);
+            this.amdMiningCheck.Name = "amdMiningCheck";
+            this.amdMiningCheck.Size = new System.Drawing.Size(62, 24);
+            this.amdMiningCheck.TabIndex = 9;
+            this.amdMiningCheck.Text = "AMD";
+            this.amdMiningCheck.UseVisualStyleBackColor = true;
+            this.amdMiningCheck.CheckedChanged += new System.EventHandler(this.amdMiningCheck_CheckedChanged);
+            // 
+            // refreshTimeNum
+            // 
+            this.refreshTimeNum.Location = new System.Drawing.Point(443, 173);
+            this.refreshTimeNum.Maximum = new decimal(new int[] {
             60,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.refreshTimeNum.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(48, 27);
-            this.numericUpDown1.TabIndex = 7;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.refreshTimeNum.Name = "refreshTimeNum";
+            this.refreshTimeNum.Size = new System.Drawing.Size(48, 27);
+            this.refreshTimeNum.TabIndex = 7;
+            this.refreshTimeNum.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.refreshTimeNum.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(305, 176);
+            this.label3.Location = new System.Drawing.Point(302, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(217, 20);
             this.label3.TabIndex = 8;
@@ -288,25 +372,26 @@
             "Low end",
             "Mid range",
             "High end"});
-            this.hardwareCb.Location = new System.Drawing.Point(416, 49);
+            this.hardwareCb.Location = new System.Drawing.Point(413, 49);
             this.hardwareCb.Name = "hardwareCb";
             this.hardwareCb.Size = new System.Drawing.Size(102, 28);
             this.hardwareCb.TabIndex = 6;
             this.hardwareCb.Text = "Low end";
+            this.hardwareCb.SelectedIndexChanged += new System.EventHandler(this.hardwareCb_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(289, 52);
+            this.label4.Location = new System.Drawing.Point(300, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 20);
+            this.label4.Size = new System.Drawing.Size(112, 20);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Your hardware is:";
+            this.label4.Text = "Hardware Type:";
             // 
             // addressTb
             // 
             this.addressTb.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.addressTb.Location = new System.Drawing.Point(27, 112);
+            this.addressTb.Location = new System.Drawing.Point(24, 112);
             this.addressTb.Name = "addressTb";
             this.addressTb.Size = new System.Drawing.Size(491, 27);
             this.addressTb.TabIndex = 4;
@@ -315,22 +400,23 @@
             // raindanceRb
             // 
             this.raindanceRb.AutoSize = true;
-            this.raindanceRb.Checked = true;
-            this.raindanceRb.Location = new System.Drawing.Point(27, 146);
+            this.raindanceRb.Enabled = false;
+            this.raindanceRb.Location = new System.Drawing.Point(24, 146);
             this.raindanceRb.Name = "raindanceRb";
             this.raindanceRb.Size = new System.Drawing.Size(147, 24);
             this.raindanceRb.TabIndex = 3;
-            this.raindanceRb.TabStop = true;
             this.raindanceRb.Text = "Mine to raindance";
             this.raindanceRb.UseVisualStyleBackColor = true;
             // 
             // addressRb
             // 
             this.addressRb.AutoSize = true;
-            this.addressRb.Location = new System.Drawing.Point(27, 82);
+            this.addressRb.Checked = true;
+            this.addressRb.Location = new System.Drawing.Point(24, 82);
             this.addressRb.Name = "addressRb";
             this.addressRb.Size = new System.Drawing.Size(190, 24);
             this.addressRb.TabIndex = 3;
+            this.addressRb.TabStop = true;
             this.addressRb.Text = "Mine to address (TRTL...):";
             this.addressRb.UseVisualStyleBackColor = true;
             // 
@@ -339,21 +425,25 @@
             this.gpuMiningCheck.AutoSize = true;
             this.gpuMiningCheck.Checked = true;
             this.gpuMiningCheck.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.gpuMiningCheck.Location = new System.Drawing.Point(88, 51);
+            this.gpuMiningCheck.Enabled = false;
+            this.gpuMiningCheck.Location = new System.Drawing.Point(85, 51);
             this.gpuMiningCheck.Name = "gpuMiningCheck";
-            this.gpuMiningCheck.Size = new System.Drawing.Size(143, 24);
+            this.gpuMiningCheck.Size = new System.Drawing.Size(56, 24);
             this.gpuMiningCheck.TabIndex = 2;
-            this.gpuMiningCheck.Text = "GPU (if available)";
+            this.gpuMiningCheck.Text = "GPU";
             this.gpuMiningCheck.UseVisualStyleBackColor = true;
+            this.gpuMiningCheck.CheckedChanged += new System.EventHandler(this.gpuMiningCheck_CheckedChanged);
             // 
             // advancedCheck
             // 
             this.advancedCheck.AutoSize = true;
-            this.advancedCheck.Location = new System.Drawing.Point(27, 175);
+            this.advancedCheck.Checked = true;
+            this.advancedCheck.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.advancedCheck.Location = new System.Drawing.Point(24, 175);
             this.advancedCheck.Name = "advancedCheck";
-            this.advancedCheck.Size = new System.Drawing.Size(186, 24);
+            this.advancedCheck.Size = new System.Drawing.Size(254, 24);
             this.advancedCheck.TabIndex = 2;
-            this.advancedCheck.Text = "Show advanced options";
+            this.advancedCheck.Text = "Advanced miner and pool options";
             this.advancedCheck.UseVisualStyleBackColor = true;
             this.advancedCheck.CheckedChanged += new System.EventHandler(this.advancedCheck_CheckedChanged);
             // 
@@ -362,12 +452,13 @@
             this.cpuMiningCheck.AutoSize = true;
             this.cpuMiningCheck.Checked = true;
             this.cpuMiningCheck.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cpuMiningCheck.Location = new System.Drawing.Point(27, 51);
+            this.cpuMiningCheck.Location = new System.Drawing.Point(24, 51);
             this.cpuMiningCheck.Name = "cpuMiningCheck";
             this.cpuMiningCheck.Size = new System.Drawing.Size(55, 24);
             this.cpuMiningCheck.TabIndex = 2;
             this.cpuMiningCheck.Text = "CPU";
             this.cpuMiningCheck.UseVisualStyleBackColor = true;
+            this.cpuMiningCheck.CheckedChanged += new System.EventHandler(this.cpuMiningCheck_CheckedChanged);
             // 
             // label6
             // 
@@ -378,44 +469,19 @@
             this.label6.Location = new System.Drawing.Point(10, 10);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 31);
+            this.label6.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.label6.Size = new System.Drawing.Size(104, 31);
             this.label6.TabIndex = 1;
             this.label6.Text = "Settings";
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.linkLabel5);
-            this.panel4.Controls.Add(this.linkLabel4);
             this.panel4.Controls.Add(this.startBtn);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 453);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(540, 56);
+            this.panel4.Size = new System.Drawing.Size(544, 56);
             this.panel4.TabIndex = 4;
-            // 
-            // linkLabel5
-            // 
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Location = new System.Drawing.Point(395, 17);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(123, 20);
-            this.linkLabel5.TabIndex = 2;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "Write config only";
-            this.linkLabel5.Visible = false;
-            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
-            // 
-            // linkLabel4
-            // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Location = new System.Drawing.Point(34, 17);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(79, 20);
-            this.linkLabel4.TabIndex = 1;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Ping pools";
-            this.linkLabel4.Visible = false;
-            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
             // 
             // startBtn
             // 
@@ -430,26 +496,32 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.Control;
+            this.panel5.Controls.Add(this.linkLabel4);
             this.panel5.Controls.Add(this.autoConfigCheck);
-            this.panel5.Controls.Add(this.showCLICheck);
             this.panel5.Controls.Add(this.writeLogFileTb);
             this.panel5.Controls.Add(this.cpuLowPowerCheck);
             this.panel5.Controls.Add(this.aesCb);
             this.panel5.Controls.Add(this.gpuBsleepNum);
             this.panel5.Controls.Add(this.gpuBfactNum);
             this.panel5.Controls.Add(this.gpuBlocksNum);
+            this.panel5.Controls.Add(this.numericUpDown3);
+            this.panel5.Controls.Add(this.numericUpDown2);
             this.panel5.Controls.Add(this.gpuThreadsNum);
+            this.panel5.Controls.Add(this.cpuUsageNum);
             this.panel5.Controls.Add(this.cpuThreadNum);
-            this.panel5.Controls.Add(this.writeLogCheck);
+            this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label11);
+            this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.showCLICheck);
+            this.panel5.Controls.Add(this.writeLogCheck);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 509);
+            this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(10);
-            this.panel5.Size = new System.Drawing.Size(540, 218);
+            this.panel5.Size = new System.Drawing.Size(541, 87);
             this.panel5.TabIndex = 5;
             // 
             // autoConfigCheck
@@ -459,43 +531,34 @@
             this.autoConfigCheck.CheckState = System.Windows.Forms.CheckState.Checked;
             this.autoConfigCheck.Location = new System.Drawing.Point(133, 15);
             this.autoConfigCheck.Name = "autoConfigCheck";
-            this.autoConfigCheck.Size = new System.Drawing.Size(269, 24);
+            this.autoConfigCheck.Size = new System.Drawing.Size(266, 24);
             this.autoConfigCheck.TabIndex = 11;
-            this.autoConfigCheck.Text = "Let xmr-stak decide (recommended)";
+            this.autoConfigCheck.Text = "Let miner(s) decide (recommended)";
             this.autoConfigCheck.UseVisualStyleBackColor = true;
+            this.autoConfigCheck.Visible = false;
             this.autoConfigCheck.CheckedChanged += new System.EventHandler(this.autoConfigCheck_CheckedChanged);
-            // 
-            // showCLICheck
-            // 
-            this.showCLICheck.AutoSize = true;
-            this.showCLICheck.Dock = System.Windows.Forms.DockStyle.Top;
-            this.showCLICheck.Location = new System.Drawing.Point(10, 165);
-            this.showCLICheck.Name = "showCLICheck";
-            this.showCLICheck.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.showCLICheck.Size = new System.Drawing.Size(520, 34);
-            this.showCLICheck.TabIndex = 10;
-            this.showCLICheck.Text = "Show CLI";
-            this.showCLICheck.UseVisualStyleBackColor = true;
             // 
             // writeLogFileTb
             // 
+            this.writeLogFileTb.Enabled = false;
             this.writeLogFileTb.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.writeLogFileTb.Location = new System.Drawing.Point(115, 143);
+            this.writeLogFileTb.Location = new System.Drawing.Point(135, 111);
             this.writeLogFileTb.Name = "writeLogFileTb";
             this.writeLogFileTb.Size = new System.Drawing.Size(239, 22);
             this.writeLogFileTb.TabIndex = 9;
             this.writeLogFileTb.Text = "trtlminer.log";
+            this.writeLogFileTb.Visible = false;
             // 
             // cpuLowPowerCheck
             // 
             this.cpuLowPowerCheck.AutoSize = true;
-            this.cpuLowPowerCheck.Enabled = false;
-            this.cpuLowPowerCheck.Location = new System.Drawing.Point(183, 51);
+            this.cpuLowPowerCheck.Location = new System.Drawing.Point(185, 108);
             this.cpuLowPowerCheck.Name = "cpuLowPowerCheck";
             this.cpuLowPowerCheck.Size = new System.Drawing.Size(144, 24);
             this.cpuLowPowerCheck.TabIndex = 8;
             this.cpuLowPowerCheck.Text = "Low power mode";
             this.cpuLowPowerCheck.UseVisualStyleBackColor = true;
+            this.cpuLowPowerCheck.Visible = false;
             // 
             // aesCb
             // 
@@ -506,95 +569,163 @@
             "null",
             "true",
             "false"});
-            this.aesCb.Location = new System.Drawing.Point(122, 81);
+            this.aesCb.Location = new System.Drawing.Point(124, 138);
             this.aesCb.Name = "aesCb";
             this.aesCb.Size = new System.Drawing.Size(121, 21);
             this.aesCb.TabIndex = 7;
             this.aesCb.Text = "null";
+            this.aesCb.Visible = false;
             // 
             // gpuBsleepNum
             // 
             this.gpuBsleepNum.Enabled = false;
             this.gpuBsleepNum.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.gpuBsleepNum.Location = new System.Drawing.Point(484, 111);
+            this.gpuBsleepNum.Location = new System.Drawing.Point(450, 167);
             this.gpuBsleepNum.Maximum = new decimal(new int[] {
-            32,
+            1000,
             0,
             0,
             0});
             this.gpuBsleepNum.Name = "gpuBsleepNum";
             this.gpuBsleepNum.Size = new System.Drawing.Size(43, 22);
             this.gpuBsleepNum.TabIndex = 6;
+            this.gpuBsleepNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.gpuBsleepNum.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.gpuBsleepNum.ValueChanged += new System.EventHandler(this.numericUpDown4_ValueChanged);
+            this.gpuBsleepNum.Visible = false;
             // 
             // gpuBfactNum
             // 
             this.gpuBfactNum.Enabled = false;
             this.gpuBfactNum.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.gpuBfactNum.Location = new System.Drawing.Point(376, 111);
+            this.gpuBfactNum.Location = new System.Drawing.Point(342, 167);
             this.gpuBfactNum.Maximum = new decimal(new int[] {
-            32,
+            1000,
             0,
             0,
             0});
             this.gpuBfactNum.Name = "gpuBfactNum";
             this.gpuBfactNum.Size = new System.Drawing.Size(43, 22);
             this.gpuBfactNum.TabIndex = 6;
+            this.gpuBfactNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.gpuBfactNum.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.gpuBfactNum.ValueChanged += new System.EventHandler(this.numericUpDown4_ValueChanged);
+            this.gpuBfactNum.Visible = false;
             // 
             // gpuBlocksNum
             // 
             this.gpuBlocksNum.Enabled = false;
             this.gpuBlocksNum.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.gpuBlocksNum.Location = new System.Drawing.Point(278, 111);
+            this.gpuBlocksNum.Location = new System.Drawing.Point(244, 167);
             this.gpuBlocksNum.Maximum = new decimal(new int[] {
-            32,
+            1000,
             0,
             0,
             0});
             this.gpuBlocksNum.Name = "gpuBlocksNum";
             this.gpuBlocksNum.Size = new System.Drawing.Size(43, 22);
             this.gpuBlocksNum.TabIndex = 6;
+            this.gpuBlocksNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.gpuBlocksNum.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.gpuBlocksNum.Visible = false;
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Enabled = false;
+            this.numericUpDown3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.numericUpDown3.Location = new System.Drawing.Point(266, 198);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            256,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(53, 22);
+            this.numericUpDown3.TabIndex = 6;
+            this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown3.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Visible = false;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Enabled = false;
+            this.numericUpDown2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.numericUpDown2.Location = new System.Drawing.Point(135, 198);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(53, 22);
+            this.numericUpDown2.TabIndex = 6;
+            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Visible = false;
             // 
             // gpuThreadsNum
             // 
             this.gpuThreadsNum.Enabled = false;
             this.gpuThreadsNum.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.gpuThreadsNum.Location = new System.Drawing.Point(174, 111);
+            this.gpuThreadsNum.Location = new System.Drawing.Point(140, 167);
             this.gpuThreadsNum.Maximum = new decimal(new int[] {
-            32,
+            64,
             0,
             0,
             0});
             this.gpuThreadsNum.Name = "gpuThreadsNum";
             this.gpuThreadsNum.Size = new System.Drawing.Size(43, 22);
             this.gpuThreadsNum.TabIndex = 6;
+            this.gpuThreadsNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.gpuThreadsNum.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.gpuThreadsNum.Visible = false;
+            // 
+            // cpuUsageNum
+            // 
+            this.cpuUsageNum.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.cpuUsageNum.Location = new System.Drawing.Point(394, 50);
+            this.cpuUsageNum.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.cpuUsageNum.Name = "cpuUsageNum";
+            this.cpuUsageNum.Size = new System.Drawing.Size(60, 22);
+            this.cpuUsageNum.TabIndex = 6;
+            this.cpuUsageNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.cpuUsageNum.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.cpuUsageNum.ValueChanged += new System.EventHandler(this.cpuUsageNum_ValueChanged);
             // 
             // cpuThreadNum
             // 
-            this.cpuThreadNum.Enabled = false;
             this.cpuThreadNum.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.cpuThreadNum.Location = new System.Drawing.Point(117, 52);
+            this.cpuThreadNum.Location = new System.Drawing.Point(119, 109);
             this.cpuThreadNum.Maximum = new decimal(new int[] {
             32,
             0,
@@ -603,57 +734,91 @@
             this.cpuThreadNum.Name = "cpuThreadNum";
             this.cpuThreadNum.Size = new System.Drawing.Size(60, 22);
             this.cpuThreadNum.TabIndex = 6;
+            this.cpuThreadNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.cpuThreadNum.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.cpuThreadNum.Visible = false;
             // 
-            // writeLogCheck
+            // label5
             // 
-            this.writeLogCheck.AutoSize = true;
-            this.writeLogCheck.Dock = System.Windows.Forms.DockStyle.Top;
-            this.writeLogCheck.Location = new System.Drawing.Point(10, 131);
-            this.writeLogCheck.Name = "writeLogCheck";
-            this.writeLogCheck.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.writeLogCheck.Size = new System.Drawing.Size(520, 34);
-            this.writeLogCheck.TabIndex = 2;
-            this.writeLogCheck.Text = "Write log:";
-            this.writeLogCheck.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 190);
+            this.label5.Name = "label5";
+            this.label5.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
+            this.label5.Size = new System.Drawing.Size(262, 30);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "AMD: Intensity:                  Worksize:";
+            this.label5.Visible = false;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label11.Location = new System.Drawing.Point(10, 101);
+            this.label11.Location = new System.Drawing.Point(12, 160);
             this.label11.Name = "label11";
             this.label11.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.label11.Size = new System.Drawing.Size(482, 30);
+            this.label11.Size = new System.Drawing.Size(443, 30);
             this.label11.TabIndex = 5;
-            this.label11.Text = "GPU options: Threads:               Blocks:               Bfact:               Bs" +
-    "leep:";
+            this.label11.Text = "Nvidia: Threads:               Blocks:               Bfact:               Bsleep:" +
+    "";
+            this.label11.Visible = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(247, 50);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(140, 20);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "CPU usage (XMRig):";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label8.Location = new System.Drawing.Point(10, 71);
+            this.label8.Location = new System.Drawing.Point(12, 130);
             this.label8.Name = "label8";
             this.label8.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.label8.Size = new System.Drawing.Size(117, 30);
             this.label8.TabIndex = 2;
             this.label8.Text = "AES override:";
+            this.label8.Visible = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label9.Location = new System.Drawing.Point(10, 41);
+            this.label9.Location = new System.Drawing.Point(12, 100);
             this.label9.Name = "label9";
             this.label9.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.label9.Size = new System.Drawing.Size(116, 30);
+            this.label9.Size = new System.Drawing.Size(417, 30);
             this.label9.TabIndex = 3;
-            this.label9.Text = "CPU threads: ";
+            this.label9.Text = "CPU threads:                                                          CPU usage:";
+            this.label9.Visible = false;
+            // 
+            // showCLICheck
+            // 
+            this.showCLICheck.AutoSize = true;
+            this.showCLICheck.Location = new System.Drawing.Point(126, 39);
+            this.showCLICheck.Name = "showCLICheck";
+            this.showCLICheck.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
+            this.showCLICheck.Size = new System.Drawing.Size(124, 34);
+            this.showCLICheck.TabIndex = 10;
+            this.showCLICheck.Text = "Show CLI(s)";
+            this.showCLICheck.UseVisualStyleBackColor = true;
+            this.showCLICheck.CheckedChanged += new System.EventHandler(this.showCLICheck_CheckedChanged);
+            // 
+            // writeLogCheck
+            // 
+            this.writeLogCheck.AutoSize = true;
+            this.writeLogCheck.Location = new System.Drawing.Point(13, 39);
+            this.writeLogCheck.Name = "writeLogCheck";
+            this.writeLogCheck.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
+            this.writeLogCheck.Size = new System.Drawing.Size(126, 34);
+            this.writeLogCheck.TabIndex = 2;
+            this.writeLogCheck.Text = "Write log(s)";
+            this.writeLogCheck.UseVisualStyleBackColor = true;
+            this.writeLogCheck.CheckedChanged += new System.EventHandler(this.writeLogCheck_CheckedChanged);
             // 
             // label7
             // 
@@ -664,7 +829,8 @@
             this.label7.Location = new System.Drawing.Point(10, 10);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 31);
+            this.label7.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.label7.Size = new System.Drawing.Size(123, 31);
             this.label7.TabIndex = 1;
             this.label7.Text = "Advanced";
             // 
@@ -673,40 +839,249 @@
             this.timer1.Interval = 10000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panel4);
+            this.panel6.Controls.Add(this.panel3);
+            this.panel6.Controls.Add(this.panel2);
+            this.panel6.Controls.Add(this.panel1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(544, 509);
+            this.panel6.TabIndex = 6;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Controls.Add(this.panel5);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(544, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(541, 509);
+            this.panel7.TabIndex = 7;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.linkLabel8);
+            this.panel8.Controls.Add(this.linkLabel6);
+            this.panel8.Controls.Add(this.label13);
+            this.panel8.Controls.Add(this.addPoolAddress);
+            this.panel8.Controls.Add(this.newPoolTb);
+            this.panel8.Controls.Add(this.selectionModeCb);
+            this.panel8.Controls.Add(this.label12);
+            this.panel8.Controls.Add(this.poolStatsUpdateCb);
+            this.panel8.Controls.Add(this.poolListPanel);
+            this.panel8.Controls.Add(this.label10);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 87);
+            this.panel8.Name = "panel8";
+            this.panel8.Padding = new System.Windows.Forms.Padding(10);
+            this.panel8.Size = new System.Drawing.Size(541, 422);
+            this.panel8.TabIndex = 6;
+            // 
+            // linkLabel6
+            // 
+            this.linkLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel6.AutoSize = true;
+            this.linkLabel6.Location = new System.Drawing.Point(403, 15);
+            this.linkLabel6.Name = "linkLabel6";
+            this.linkLabel6.Size = new System.Drawing.Size(94, 20);
+            this.linkLabel6.TabIndex = 9;
+            this.linkLabel6.TabStop = true;
+            this.linkLabel6.Text = "Update Stats";
+            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 17.25F);
+            this.label13.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label13.Location = new System.Drawing.Point(506, 374);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(23, 31);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "-";
+            this.label13.Visible = false;
+            // 
+            // addPoolAddress
+            // 
+            this.addPoolAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.addPoolAddress.AutoSize = true;
+            this.addPoolAddress.Font = new System.Drawing.Font("Segoe UI", 17.25F);
+            this.addPoolAddress.ForeColor = System.Drawing.Color.ForestGreen;
+            this.addPoolAddress.Location = new System.Drawing.Point(479, 374);
+            this.addPoolAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.addPoolAddress.Name = "addPoolAddress";
+            this.addPoolAddress.Size = new System.Drawing.Size(30, 31);
+            this.addPoolAddress.TabIndex = 8;
+            this.addPoolAddress.Text = "+";
+            this.addPoolAddress.Visible = false;
+            // 
+            // newPoolTb
+            // 
+            this.newPoolTb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.newPoolTb.Location = new System.Drawing.Point(308, 380);
+            this.newPoolTb.Name = "newPoolTb";
+            this.newPoolTb.Size = new System.Drawing.Size(164, 27);
+            this.newPoolTb.TabIndex = 7;
+            this.newPoolTb.Visible = false;
+            // 
+            // selectionModeCb
+            // 
+            this.selectionModeCb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.selectionModeCb.FormattingEnabled = true;
+            this.selectionModeCb.Items.AddRange(new object[] {
+            "lower ping",
+            "smaller payouts",
+            "larger payouts",
+            "lower hashrate",
+            "higher hashrate",
+            "lower fee",
+            "higher fee",
+            "manual selection"});
+            this.selectionModeCb.Location = new System.Drawing.Point(147, 380);
+            this.selectionModeCb.Name = "selectionModeCb";
+            this.selectionModeCb.Size = new System.Drawing.Size(155, 28);
+            this.selectionModeCb.TabIndex = 6;
+            this.selectionModeCb.Text = "lower ping";
+            this.selectionModeCb.SelectedIndexChanged += new System.EventHandler(this.AnalyzePoolsByCondition);
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(20, 383);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(121, 20);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Prefer pools with";
+            // 
+            // poolStatsUpdateCb
+            // 
+            this.poolStatsUpdateCb.AutoSize = true;
+            this.poolStatsUpdateCb.Enabled = false;
+            this.poolStatsUpdateCb.Location = new System.Drawing.Point(86, 14);
+            this.poolStatsUpdateCb.Name = "poolStatsUpdateCb";
+            this.poolStatsUpdateCb.Size = new System.Drawing.Size(205, 24);
+            this.poolStatsUpdateCb.TabIndex = 4;
+            this.poolStatsUpdateCb.Text = "Automatically update stats";
+            this.poolStatsUpdateCb.UseVisualStyleBackColor = true;
+            this.poolStatsUpdateCb.Visible = false;
+            this.poolStatsUpdateCb.CheckedChanged += new System.EventHandler(this.poolStatsUpdateCb_CheckedChanged);
+            // 
+            // poolListPanel
+            // 
+            this.poolListPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.poolListPanel.AutoScroll = true;
+            this.poolListPanel.Location = new System.Drawing.Point(24, 45);
+            this.poolListPanel.Name = "poolListPanel";
+            this.poolListPanel.Size = new System.Drawing.Size(517, 321);
+            this.poolListPanel.TabIndex = 3;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 17.25F);
+            this.label10.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label10.Location = new System.Drawing.Point(10, 10);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.label10.Size = new System.Drawing.Size(75, 31);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Pools";
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.Location = new System.Drawing.Point(410, 16);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(118, 20);
+            this.linkLabel4.TabIndex = 13;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "Reset everything";
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
+            // 
+            // linkLabel5
+            // 
+            this.linkLabel5.AutoSize = true;
+            this.linkLabel5.Location = new System.Drawing.Point(515, 10);
+            this.linkLabel5.Name = "linkLabel5";
+            this.linkLabel5.Size = new System.Drawing.Size(16, 20);
+            this.linkLabel5.TabIndex = 4;
+            this.linkLabel5.TabStop = true;
+            this.linkLabel5.Text = "?";
+            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
+            // 
+            // linkLabel7
+            // 
+            this.linkLabel7.AutoSize = true;
+            this.linkLabel7.Location = new System.Drawing.Point(515, 10);
+            this.linkLabel7.Name = "linkLabel7";
+            this.linkLabel7.Size = new System.Drawing.Size(16, 20);
+            this.linkLabel7.TabIndex = 4;
+            this.linkLabel7.TabStop = true;
+            this.linkLabel7.Text = "?";
+            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
+            // 
+            // linkLabel8
+            // 
+            this.linkLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel8.AutoSize = true;
+            this.linkLabel8.Location = new System.Drawing.Point(508, 15);
+            this.linkLabel8.Name = "linkLabel8";
+            this.linkLabel8.Size = new System.Drawing.Size(16, 20);
+            this.linkLabel8.TabIndex = 4;
+            this.linkLabel8.TabStop = true;
+            this.linkLabel8.Text = "?";
+            this.linkLabel8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel8_LinkClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(540, 743);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1085, 509);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
-            this.Text = "Turtlecoin OneClickMiner";
+            this.Text = "TurtleCoin OneClickMiner";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.refreshTimeNum)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gpuBsleepNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gpuBfactNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gpuBlocksNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gpuThreadsNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpuUsageNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cpuThreadNum)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -750,14 +1125,37 @@
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.ComboBox hardwareCb;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.CheckBox autoConfigCheck;
-        private System.Windows.Forms.LinkLabel linkLabel5;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown refreshTimeNum;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox selectionModeCb;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.CheckBox poolStatsUpdateCb;
+        private System.Windows.Forms.Panel poolListPanel;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.ComboBox minerSelectionCb;
+        private System.Windows.Forms.CheckBox nvidiaMiningCheck;
+        private System.Windows.Forms.CheckBox amdMiningCheck;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label addPoolAddress;
+        private System.Windows.Forms.TextBox newPoolTb;
+        private System.Windows.Forms.LinkLabel linkLabel6;
+        private System.Windows.Forms.NumericUpDown cpuUsageNum;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.LinkLabel linkLabel4;
+        private System.Windows.Forms.LinkLabel linkLabel5;
+        private System.Windows.Forms.LinkLabel linkLabel7;
+        private System.Windows.Forms.LinkLabel linkLabel8;
     }
 }
 
